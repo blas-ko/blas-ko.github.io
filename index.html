@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Your Name — Researcher</title>
+  <meta name="description" content="Postdoctoral researcher portfolio: publications, research projects, software, datasets, teaching, blog, and music." />
+  
+  <!-- Open Graph / Twitter cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. Your Name — Researcher" />
+  <meta property="og:description" content="Research, software, and writing." />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:url" content="https://your-domain.example" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="canonical" href="https://your-domain.example" />
+
+  <style>
+    /* ===== Design tokens ===== */
+    :root {
+      --bg: #ffffff;
+      --surface: #f7f7f8;
+      --text: #141414;
+      --muted: #5b5f6a;
+      --link: #1f6feb;
+      --accent: #6e59ff;
+      --card: #ffffff;
+      --border: #e6e6eb;
+      --shadow: 0 6px 30px rgba(0,0,0,0.06);
+      --radius: 16px;
+      --maxw: 1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    html.dark {
+      --bg: #0b0d10;
+      --surface: #0f1217;
+      --text: #e6eaf2;
+      --muted: #9aa4b2;
+      --link: #7fb0ff;
+      --accent: #a48bff;
+      --card: #0f1217;
+      --border: #1e2530;
+      --shadow: 0 6px 30px rgba(0,0,0,0.35);
+    }
+
+    /* ===== Base ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans);
+      line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container { width: min(100% - 2rem, var(--maxw)); margin-inline: auto; }
+    .grid { display: grid; gap: 1.2rem; }
+    .cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+    /* ===== Header & Nav ===== */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: saturate(1.2) blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .row { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; gap: .75rem; }
+    .brand { display: inline-flex; align-items: baseline; gap: .6rem; font-weight: 700; }
+    .brand .dot { width: .65rem; height: .65rem; background: var(--accent); border-radius: 999px; display: inline-block; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .navlinks a { padding: .35rem .7rem; border-radius: 999px; border: 1px solid transparent; }
+    .navlinks a:hover { background: var(--surface); text-decoration: none; }
+    .theme-toggle { border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: .35rem .6rem; cursor: pointer; box-shadow: var(--shadow); }
+
+    /* ===== Hero ===== */
+    .hero { padding: 3.5rem 0 1.5rem; }
+    .hero .lead { font-size: clamp(1.15rem, 1.2vw + 1rem, 1.35rem); color: var(--muted); }
+    h1 { font-size: clamp(1.8rem, 1.6rem + 2vw, 3rem); margin: 0 0 .5rem; letter-spacing: -.02em; }
+
+    /* ===== Sections ===== */
+    section { padding: 2rem 0; border-top: 1px solid var(--border); }
+    h2 { font-size: clamp(1.35rem, 1rem + 1vw, 2rem); margin: 0 0 1rem; }
+    .kicker { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; color: var(--muted); }
+
+    /* ===== Cards ===== */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 .35rem; font-size: 1.05rem; }
+    .card .meta { color: var(--muted); font-size: .9rem; }
+    .tag { display: inline-block; font-size: .75rem; padding: .2rem .5rem; border: 1px dashed var(--border); border-radius: 999px; color: var(--muted); }
+
+    /* ===== Two-column layout for About ===== */
+    .cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; }
+    @media (max-width: 860px) { .cols { grid-template-columns: 1fr; } }
+
+    /* ===== Footer ===== */
+    footer { padding: 2rem 0 3rem; color: var(--muted); }
+
+    /* ===== Utilities ===== */
+    .row { display: flex; gap: .75rem; align-items: center; }
+    .spacer { height: .8rem; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .9rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow); }
+    .btn:hover { text-decoration: none; filter: brightness(1.02); }
+    .muted { color: var(--muted); }
+    .nowrap { white-space: nowrap; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 1rem; top: 1rem; background: var(--card); padding: .5rem 1rem; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+
+    code, pre { font-family: var(--mono); font-size: .95rem; }
+  </style>
+
+  <!-- Structured data for better SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Your Name",
+    "jobTitle": "Postdoctoral Researcher",
+    "affiliation": {"@type":"Organization","name":"Your Institution"},
+    "url": "https://your-domain.example",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=YOURID",
+      "https://orcid.org/0000-0000-0000-0000",
+      "https://github.com/youruser",
+      "https://x.com/youruser"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav class="row">
+        <div class="brand" aria-label="Home">
+          <span class="dot" aria-hidden="true"></span>
+          <a href="#">Dr. Your Name</a>
+        </div>
+        <div class="navlinks" aria-label="Primary">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#software">Software</a>
+          <a href="#projects">Projects</a>
+          <a href="#blog">Blog</a>
+          <a href="#music">Music</a>
+          <a href="#contact">CV & Contact</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="about">
+      <h1>Hi, I’m <span class="nowrap">Dr. Your Name</span>.</h1>
+      <p class="lead">Postdoctoral researcher in <strong>Network Science</strong> & <strong>Computational Social Science</strong>. I build <em>explainable models</em> of diffusion and opinion dynamics, and ship open‑source tools for reproducible research.</p>
+      <div class="row" role="group" aria-label="Quick actions">
+        <a class="btn" href="#publications">View publications</a>
+        <a class="btn" href="#software">Explore software</a>
+        <a class="btn" href="cv/CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+      </div>
+    </section>
+
+    <!-- ===== About & Highlights ===== -->
+    <section aria-labelledby="about-kicker">
+      <p id="about-kicker" class="kicker">About</p>
+      <div class="cols">
+        <div>
+          <p>I’m currently a postdoc at <a href="#">Your Lab</a> (Madrid), working with Prof. X on <strong>incentivized network dynamics</strong> and <strong>fair AI adoption</strong>. My work blends agent‑based modeling, causal inference, and data assimilation.</p>
+          <p>Beyond academia, I play guitar in a rock band and build tools for music information retrieval. I care a lot about clear writing, elegant visuals, and open science.</p>
+          <div class="spacer"></div>
+          <div class="row">
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
+            <span class="tag">ABM</span>
+            <span class="tag">Network theory</span>
+            <span class="tag">Causal inference</span>
+          </div>
+        </div>
+        <aside class="card">
+          <h3>News</h3>
+          <ul>
+            <li>🧪 New preprint: Incentivized Network Dynamics in Digital Job Recruitment (2025)</li>
+            <li>🎤 Invited talk: “How we use LLMs” at IBiDat</li>
+            <li>🎸 New single with the band is out now!</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Research ===== -->
+    <section id="research" aria-labelledby="research-title">
+      <p class="kicker">Research</p>
+      <h2 id="research-title">What I’m working on</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Incentivized diffusion on social graphs</h3>
+          <p class="meta">Project • 2024–</p>
+          <p>Agent‑based model where referrals propagate vacancies until a hire occurs, contrasting with standard independent cascades. Includes economic incentives for propagation.</p>
+          <div class="row"><a class="btn" href="#">Preprint</a><a class="btn" href="#">Code</a></div>
+        </article>
+        <article class="card">
+          <h3>Equitable AI adoption ecology</h3>
+          <p class="meta">Project • 2025–</p>
+          <p>Models competition between fair vs. unfair AI in markets using payoff dynamics, reputation, and regulatory penalties; simulated at scale.</p>
+          <div class="row"><a class="btn" href="#">Design doc</a><a class="btn" href="#">Repo</a></div>
+        </article>
+        <article class="card">
+          <h3>Opinion dynamics with data assimilation</h3>
+          <p class="meta">Project • 2024–</p>
+          <p>Likelihood‑based inference vs. ensemble Kalman methods on bounded‑confidence models; estimating latent opinions from interactions.</p>
+          <div class="row"><a class="btn" href="#">Paper</a><a class="btn" href="#">Reproducible capsule</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Publications ===== -->
+    <section id="publications" aria-labelledby="pubs-title">
+      <p class="kicker">Publications</p>
+      <h2 id="pubs-title">Selected papers</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Incentivized Network Dynamics in Digital Job Recruitment</h3>
+          <p class="meta">Your Name, Coauthor • 2025 • Preprint</p>
+          <p>Introduces a diffusion model with halting and incentives, bridging economic decision‑making and information spread.</p>
+          <div class="row"><a class="btn" href="#">PDF</a><a class="btn" href="#">BibTeX</a><a class="btn" href="#">Code</a></div>
+        </div>
+        <div class="card">
+          <h3>Second‑neighbor similarities in directed weighted networks</h3>
+          <p class="meta">Your Name, Coauthor • 2025 • Journal</p>
+          <p>A second‑neighbor approach to vertex similarity, compared to Barberá (2015) and Leicht et al. (2006).</p>
+          <div class="row"><a class="btn" href="#">PDF</a><a class="btn" href="#">Code</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Software ===== -->
+    <section id="software" aria-labelledby="soft-title">
+      <p class="kicker">Software</p>
+      <h2 id="soft-title">Open‑source packages</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>ihc-model</h3>
+          <p class="meta">Python • pip install ihc-model</p>
+          <p>Agent‑based framework for incentivized diffusion with efficient simulation & plotting utilities.</p>
+          <div class="row"><a class="btn" href="#">Repo</a><a class="btn" href="#">Docs</a></div>
+        </article>
+        <article class="card">
+          <h3>net-sim-explain</h3>
+          <p class="meta">R • CRAN in prep</p>
+          <p>Interpretable tools to explain opinion dynamics from observed interactions and interventions.</p>
+          <div class="row"><a class="btn" href="#">Repo</a><a class="btn" href="#">Examples</a></div>
+        </article>
+        <article class="card">
+          <h3>mood-audio-features</h3>
+          <p class="meta">Python • pip • MIR</p>
+          <p>Fast extraction of interpretable musical features from Mel spectrograms, at scale.</p>
+          <div class="row"><a class="btn" href="#">Repo</a><a class="btn" href="#">Docs</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Projects (other) ===== -->
+    <section id="projects" aria-labelledby="proj-title">
+      <p class="kicker">Projects</p>
+      <h2 id="proj-title">Side & collab work</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Interactive lecture: Network Theory + ML</h3>
+          <p class="meta">Talk • Slides + Live demo</p>
+          <p>Audience‑friendly intro to network theory with live polling and a small LLM agent analyzing responses.</p>
+          <div class="row"><a class="btn" href="#">Slides</a><a class="btn" href="#">Demo</a></div>
+        </article>
+        <article class="card">
+          <h3>Marketing ROI optimizer</h3>
+          <p class="meta">Client tool • 2025</p>
+          <p>Statistical optimization to allocate app‑marketing budget for maximum ROI under constraints.</p>
+          <div class="row"><a class="btn" href="#">Report</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Blog ===== -->
+    <section id="blog" aria-labelledby="blog-title">
+      <p class="kicker">Blog</p>
+      <h2 id="blog-title">Latest posts</h2>
+      <div class="cards" id="blogList">
+        <!-- Filled by JS below; replace with static HTML if you prefer. -->
+      </div>
+      <p class="muted">Pro tip: if you plan to write with notebooks, consider Quarto or Astro + MDX. See README for options.</p>
+    </section>
+
+    <!-- ===== Music ===== -->
+    <section id="music" aria-labelledby="music-title">
+      <p class="kicker">Music</p>
+      <h2 id="music-title">Guitarist & band</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Latest track</h3>
+          <p>Modern rock with a touch of funk. <a href="#">Listen on your platform</a>.</p>
+          <audio controls src="/assets/audio/sample.mp3" style="width:100%"></audio>
+        </div>
+        <div class="card">
+          <h3>Live</h3>
+          <p>We play across Madrid and Europe — join the next show!</p>
+          <ul>
+            <li>Fri • Sala Sol (Madrid)</li>
+            <li>Sat • Barcelona</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CV & Contact ===== -->
+    <section id="contact" aria-labelledby="contact-title">
+      <p class="kicker">CV & Contact</p>
+      <h2 id="contact-title">Let’s talk</h2>
+      <div class="grid">
+        <div class="card">
+          <p>Download a one‑page CV and a full academic CV. For collaboration or speaking, email me directly.</p>
+          <div class="row">
+            <a class="btn" href="cv/CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+            <button class="btn" id="copyEmail" aria-label="Copy email">Copy email</button>
+          </div>
+          <p class="muted">Email: <code id="email">me [at] example [dot] edu</code></p>
+          <div class="row" aria-label="Profiles">
+            <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="btn" href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
+            <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://x.com/" target="_blank" rel="noopener">X</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Colophon</h3>
+          <p>Built with clean HTML/CSS/JS. No framework required. Deployed on GitHub Pages. Licensed MIT.</p>
+          <p class="muted">Last updated: <span id="lastUpdated">—</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>© <span id="year"></span> Your Name. Content licensed under <a href="#">CC BY 4.0</a>. Code under <a href="#">MIT</a>.</p>
+  </footer>
+
+  <script>
+    // ===== Theme toggle with localStorage =====
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if ((stored === 'dark') || (!stored && prefersDark)) document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('no-js');
+      const toggle = document.getElementById('themeToggle');
+      toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        toggle.textContent = isDark ? '☀️' : '🌙';
+      });
+      toggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+    })();
+
+    // ===== Blog list demo (replace with your generator or static HTML) =====
+    const posts = [
+      {title: 'Explaining cascades with incentives', date: '2025-06-15', href: '#', tags:['ABM','Methods'], summary: 'A gentle walkthrough of the Independent Halting Cascade model with toy examples.'},
+      {title: 'Opinion dynamics: EnKF vs. Likelihood', date: '2025-05-12', href: '#', tags:['Inference','Dynamics'], summary: 'Comparing estimators on bounded-confidence models with synthetic observations.'},
+      {title: 'Readable research websites', date: '2025-04-02', href: '#', tags:['Writing'], summary: 'Small design choices that improve clarity and trust.'}
+    ];
+    const list = document.getElementById('blogList');
+    posts.forEach(p => {
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.innerHTML = `
+        <h3><a href="${p.href}">${p.title}</a></h3>
+        <p class="meta">${new Date(p.date).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'})}</p>
+        <p>${p.summary}</p>
+        <div class="row">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
+      `;
+      list.appendChild(el);
+    });
+
+    // ===== Copy email button =====
+    document.getElementById('copyEmail').addEventListener('click', () => {
+      const email = 'your.name@university.edu'; // TODO: change
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById('copyEmail');
+        const old = btn.textContent;
+        btn.textContent = 'Copied ✔';
+        setTimeout(() => btn.textContent = old, 1500);
+      });
+    });
+
+    // ===== Footer helpers =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastUpdated').textContent = new Date(document.lastModified).toLocaleDateString();
+  </script>
+</body>
+</html>
