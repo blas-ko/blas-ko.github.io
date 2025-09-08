@@ -147,8 +147,8 @@ body::before {
 /* Mobile: reduce visual density for readability */
 @media (max-width: 860px) {
   body::before {
-    background-position: left 40vw top -35vh; /* -20vw top -8vh;  /* keep same anchor feel on phones */
-    background-size: 200% auto;                /* zoom so the same cluster remains visible */
+    background-position: left 20vw top -15vh; /* -20vw top -8vh;  /* keep same anchor feel on phones */
+    background-size: 160% auto;                /* zoom so the same cluster remains visible */
     opacity: calc(var(--bg-network-opacity) * 0.9);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 90%);
             mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 90%);
