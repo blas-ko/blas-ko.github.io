@@ -112,11 +112,11 @@ code, pre { font-family: var(--mono); font-size: .95rem; }
 /* Drop your SVGs at: assets/img/network-light.svg and assets/img/network-dark.svg */
 :root {
   --bg-network: url("/assets/img/network-light.svg");
-  --bg-network-opacity: 0.15; /* tweak 0.06–0.18 to taste */
+  --bg-network-opacity: 0.10; /* tweak 0.06–0.18 to taste */
 }
 html.dark {
   --bg-network: url("/assets/img/network-dark.svg");
-  --bg-network-opacity: 0.18;
+  --bg-network-opacity: 0.13;
 }
 
 /* Ensure the background sits behind all content */
@@ -147,7 +147,7 @@ body::before {
 /* Mobile: reduce visual density for readability */
 @media (max-width: 860px) {
   body::before {
-    background-position: left 18vw top -15vh; /* -20vw top -8vh;  /* keep same anchor feel on phones */
+    background-position: left 16vw top -12vh; /* -20vw top -8vh;  /* keep same anchor feel on phones */
     background-size: 160% auto;                /* zoom so the same cluster remains visible */
     opacity: calc(var(--bg-network-opacity) * 0.9);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 90%);
