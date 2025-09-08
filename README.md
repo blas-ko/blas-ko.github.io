@@ -1,6 +1,6 @@
 # Blas Kolic — Academic Website
 
-Welcome to the repository for my personal academic website, built with plain HTML, CSS, and JavaScript and deployed via GitHub Pages.
+Welcome to my personal website's repo. ChatGPT helped me build it using plain HTML, CSS, and JavaScript. Deployed via GitHub Pages.
 
 ---
 
@@ -24,7 +24,7 @@ This static site serves as my research portfolio, featuring my background, publi
 
 ##  Local Development
 
-To preview site locally with includes and styles correctly loaded:
+To preview the site locally with includes and styles correctly loaded:
 ```bash
 cd blas-ko.github.io
 python3 -m http.server 8000
