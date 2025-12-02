@@ -1,34 +1,112 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
+
 <body>
-  <section id="research" aria-labelledby="research-title">
+  <section id="research" aria-labelledby="pubs-title">
     <p class="kicker">Research</p>
-    <h2 id="research-title">What I’m working on</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>Incentivized diffusion on social graphs</h3>
-        <p class="meta">Project • 2024–</p>
-        <p>Agent-based model where referrals propagate vacancies until a hire occurs, contrasting with standard independent cascades. Includes economic incentives for propagation.</p>
-        <div class="row"><a class="btn" href="#">Preprint</a><a class="btn" href="#">Code</a></div>
-      </article>
-      <article class="card">
-        <h3>Equitable AI adoption ecology</h3>
-        <p class="meta">Project • 2025–</p>
-        <p>Models competition between fair vs. unfair AI in markets using payoff dynamics, reputation, and regulatory penalties; simulated at scale.</p>
-        <div class="row"><a class="btn" href="#">Design doc</a><a class="btn" href="#">Repo</a></div>
-      </article>
-      <article class="card">
-        <h3>Opinion dynamics with data assimilation</h3>
-        <p class="meta">Project • 2024–</p>
-        <p>Likelihood-based inference vs. ensemble Kalman methods on bounded-confidence models; estimating latent opinions from interactions.</p>
-        <div class="row"><a class="btn" href="#">Paper</a><a class="btn" href="#">Reproducible capsule</a></div>
-      </article>
+    <h2 id="pubs-title">Selected publications</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Incentivized network dynamics in digital job recruitment</h3>
+        <p class="meta"><strong>Kolic B.</strong>, Cebrian M., Ukar I., Lillo R.E. • 2025 • <em>Journal of Complex
+            Networks</em></p>
+        <img src="assets/img/publications/incentivized.png" alt="Figure from paper"
+          style="float:right; width:80%; max-width:220px; height:auto; margin:0 0 .5rem .75rem; border-radius:6px;" />
+        <p></p>
+        <div class="row">
+          <a class="btn" href="https://doi.org/10.1093/comnet/cnaf047" target="_blank">paper</a>
+          <a class="btn" href="https://arxiv.org/abs/2410.09698" target="_blank">arXiv</a>
+          <a class="btn" href="https://github.com/blas-ko/IndependentHaltingCascadeModel" target="_blank">code</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>From chambers to echo chambers: quantifying polarization with a second-neighbor approach applied to
+          Twitter's climate discussion</h3>
+        <p class="meta"><strong>Kolic B.</strong>, Aguirre-López F., et al. • 2025 • <em>Journal of Complex
+            Networks</em></p>
+        <img src="assets/img/publications/from_chambers.png" alt="Figure from paper"
+          style="float:right; width:80%; max-width:220px; height:auto; margin:0 0 .5rem .75rem; border-radius:6px;" />
+        <p></p>
+        <div class="row">
+          <a class="btn" href="https://doi.org/10.1093/comnet/cnaf020" target="_blank">paper</a>
+          <a class="btn" href="https://arxiv.org/abs/2206.14501" target="_blank">arXiv</a>
+          <a class="btn" href="https://github.com/blas-ko/Twitter_chambers" target="_blank">code</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Estimating initial conditions for dynamical systems with incomplete information</h3>
+        <p class="meta"><strong>Kolic B.</strong>, Sabuco J., Farmer J.D. • 2022 • <em>Nonlinear Dynamics</em></p>
+        <img src="assets/img/publications/estimating.png" alt="Figure from paper"
+          style="float:right; width:80%; max-width:220px; height:auto; margin:0 0 .5rem .75rem; border-radius:6px;" />
+        <p>open access</p>
+        <div class="row">
+          <a class="btn" href="https://link.springer.com/article/10.1007/s11071-022-07365-y" target="_blank">paper</a>
+          <a class="btn" href="https://github.com/blas-ko/LatentStateInitialization" target="_blank">code</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Public risk perception and emotion on Twitter during the Covid-19 pandemic</h3>
+        <p class="meta">Dyer J., <strong>Kolic B.</strong> • 2020 • <em>Applied Network Science</em></p>
+        <img src="assets/img/publications/public.png" alt="Figure from paper"
+          style="float:right; width:80%; max-width:220px; height:auto; margin:0 0 .5rem .75rem; border-radius:6px;" />
+        <p>open access</p>
+        <div class="row">
+          <a class="btn" href="https://appliednetsci.springeropen.com/articles/10.1007/s41109-020-00334-7"
+            target="_blank">paper</a>
+        </div>
+      </div>
     </div>
+
+    <h2 id="pubs-title">Preprints</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Comparing Data Assimilation and Likelihood-Based Inference on Latent State Estimation in Agent-Based Models</h3>
+        <p class="meta"><strong>Kolic B.</strong>, Monti, C., Morales, G. D. F., Pangallo, M. • 2025 • <em>arXiv preprint</em></p>
+        <p>under revision</p>
+        <div class="row">
+          <a class="btn" href="https://arxiv.org/abs/2509.17625" target="_blank">arXiv</a>
+          <a class="btn" href="" target="_blank">code (soon)</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Rhythm and form in music: a complex systems approach</h3>
+        <p class="meta"><strong>Kolic B.</strong>, Rodríguez-Cervantes M.T., Padilla P., Knights F. • 2022 • <em>arXiv
+            preprint</em></p>
+        <p>under revision.</p>
+        <div class="row">
+          <a class="btn" href="https://arxiv.org/abs/2207.03602" target="_blank">arXiv</a>
+          <a class="btn" href="https://github.com/blas-ko/rhythmic_complexity" target="_blank">code (soon)</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="pubs-title">Ongoing research</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Trade-offs Between Individual and Group Fairness in Machine Learning: A Comprehensive Review</h3>
+        <p class="meta">Benítez-Peña S., <strong>Kolic B.</strong>, Menéndez V., Pulido B.</p>
+        <p>in preparation</p>
+      </div>
+      <div class="card">
+        <h3>Network Ensemble Kalman Filter: Inferring Latent States in Interacting Agent Systems</h3>
+        <p class="meta"><strong>Kolic B.</strong>, Farmer J.D.</p>
+        <p>in preparation</p>
+      </div>
+      <div class="card">
+        <h3>As Pro-social Messaging Reduces Engagement, the Platform Substitutes the Downstream Effects</h3>
+        <p class="meta">Jahani E., <strong>Kolic B.</strong>, Tonneau M., Barkoczi D., Malhotra N., Orozco V., &
+          Fraiberger S.</p>
+        <p>in preparation</p>
+      </div>
+    </div>
+
   </section>
 </body>
+
 </html>

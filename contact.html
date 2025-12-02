@@ -10,24 +10,24 @@
     <p class="kicker">CV & Contact</p>
     <h2 id="contact-title">Let’s talk</h2>
     <div class="grid">
-      <div class="card">
-        <p>Download a one-page CV and a full academic CV. For collaboration or speaking, email me directly.</p>
-        <div class="row">
-          <a class="btn" href="cv/CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-          <button class="btn" id="copyEmail" aria-label="Copy email">Copy email</button>
+      <div class="card contact-card">
+        <div class="row top-actions">
+          <a class="btn" href="cv/CV.pdf" target="_blank" rel="noopener">
+            Download CV (PDF)
+          </a>
+          <button class="btn icon-btn copy-btn" id="copyEmail" aria-label="Copy email">
+            <span class="icon">📋</span>
+            <span class="label">Copy email</span>
+          </button>
         </div>
-        <!-- data-email is used by the copy handler in index.html -->
-        <p class="muted">
-          Email:
-          <code id="email" data-email="blas.kolic@uc3m.es">blas.kolic [at] uc3m [dot] es</code>
+        <p class="email-line">
+          <span class="email-label">Email:</span>
+          <code id="email" data-email="blas.kolic@uc3m.es">
+            blas.kolic [at] uc3m [dot] es
+          </code>
         </p>
-        <div class="row" aria-label="Profiles">
-          <a class="btn" href="https://scholar.google.com/citations?user=0XChvVYAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
-          <a class="btn" href="https://orcid.org/0000-0003-3175-4254" target="_blank" rel="noopener">ORCID</a>
-          <a class="btn" href="https://github.com/blas-ko" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://x.com/Blas_Ko" target="_blank" rel="noopener">X</a>      
-        </div>
       </div>
+      
       <div class="card">
         <!-- <h3>Colophon</h3> -->
         <p>Built with clean HTML/CSS/JS. No framework required. Deployed on GitHub Pages. Licensed MIT.</p>
